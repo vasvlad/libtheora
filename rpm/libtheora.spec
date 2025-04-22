@@ -34,6 +34,7 @@ Description: %{summary}
 %setup -q -n %{name}-%{version}/theora
 
 %build
+export CFLAGS="$RPM_OPT_FLAGS -fPIC"
 ./autogen.sh
 %configure --enable-static \
     --disable-shared \
